@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	while (i <= len)
 	{
-		res[len - i] = (num % 10) + 48; 1234 - 4  3  2  1 
+		res[len - i] = (num % 10) + 48;
 		num = num / 10;
 		i++;
 		if (num == 0 && n < 0)

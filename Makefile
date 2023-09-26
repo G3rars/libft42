@@ -60,7 +60,7 @@ NAME = libft.a
 $(NAME): $(OBJ_O)
 		ar -crs $(LIBRARY) $(OBJ_O)
 
-$(CACHE):  $(BOBJ_O)
+$(CACHE):  $(BOBJ_O) $(NAME)
 		ar -crs $(LIBRARY) $(BOBJ_O)
 		ar -crs $(CACHE) $(BOBJ_O)
 
@@ -72,7 +72,7 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(LIBRARY) test.out
+	rm -f $(LIBRARY) test.out $(CACHE)
 
 re: fclean all
 
