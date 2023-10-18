@@ -51,8 +51,6 @@ BSOURCE = ft_lstnew_bonus.c 		\
 
 OBJ_O := $(SOURCE:.c=.o)
 
-CACHE = .cache
-
 BOBJ_O := $(BSOURCE:.c=.o)
 
 NAME = libft.a
@@ -60,19 +58,15 @@ NAME = libft.a
 $(NAME): $(OBJ_O)
 		ar -crs $(LIBRARY) $(OBJ_O)
 
-$(CACHE):  $(BOBJ_O) $(NAME)
-		ar -crs $(LIBRARY) $(BOBJ_O)
-		ar -crs $(CACHE) $(BOBJ_O)
-
 all: $(NAME)
 
-bonus: $(CACHE)
-
+bonus:  $(BOBJ_O)
+		ar -crs $(LIBRARY) $(BOBJ_O)
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(LIBRARY) test.out $(CACHE)
+	rm -f $(LIBRARY) test.out
 
 re: fclean all
 
